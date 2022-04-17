@@ -32,6 +32,7 @@ function showMovies(data) {
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
     <div class="movie_cover-inner">
+
       <img src="${movie.posterUrlPreview}" class=" movie_cover" alt="${movie.nameRu}">
       <div class="movie_cover-darkened"></div>
     </div>
