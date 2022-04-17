@@ -28,7 +28,7 @@ function showMovies(data) {
     </div>
     <div class="movie_info">
       <div class="movie_title">${movie.nameRu}</div>
-      <div class="movie_category">${movie.genres.map( (genre) => `${genre.genre}`)}</div>
+      <div class="movie_category">${movie.genres.map( (genre) => `${ genre.genre}`)}</div>
       <div class="movie_average movie_average-green">9</div>
     </div>
     `;
