@@ -14,6 +14,15 @@ async function getMovies(url) {
   showMovies(respData);
 }
 
+function getClassByRare(vote) {
+  if (vote >= 7) {
+    return "green";
+  } else if (vote > 5) {
+      return "orange";
+  } else {
+      return "red";
+  }
+}
 
 function showMovies(data) {
   const moviesElement = document.querySelector(".movies");
@@ -29,7 +38,7 @@ function showMovies(data) {
     <div class="movie_info">
       <div class="movie_title">${movie.nameRu}</div>
       <div class="movie_category">${movie.genres.map( (genre) => `${ genre.genre}`)}</div>
-      <div class="movie_average movie_average-green">9</div>
+      <div class="movie_average movie_average-${getClassByRare(movie.rating)}">${movie.rating}</div>
     </div>
     `;
       moviesElement.appendChild(movieElement);
