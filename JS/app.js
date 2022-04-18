@@ -17,14 +17,27 @@ async function getMovies(url) { // асинхронный запрос
 }
 
 function getClassByRate(vote) { // в if делаем ранжирование по рейтингу фильма
-  if (vote >= 7) {
-    return "green";
-  } else if (vote > 5) {
+  switch (true) { //через switch
+    case (vote >= 7):
+      return "green";
+      break;
+    case (vote > 5):
       return "orange";
-  } else {
+      break;
+    default:
       return "red";
+      break;
   }
 }
+
+//   if (vote >= 7) { //через IF
+//     return "green";
+//   } else if (vote > 5) {
+//       return "orange";
+//   } else {
+//       return "red";
+//   }
+// }
 
 function showMovies(data) {
   const moviesElement = document.querySelector(".movies");
