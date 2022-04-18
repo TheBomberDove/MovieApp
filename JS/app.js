@@ -1,3 +1,5 @@
+// Ссылка на swager: https://kinopoiskapiunofficial.tech/documentation/api/#/films/get_api_v2_2_films_top
+
 const apiKEY = "4c778d14-cc50-4c76-8705-b0308485b611"; //API-ключ
 const apiURLPop = "https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1"; //URL на который ходим с ключом
 
