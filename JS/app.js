@@ -57,7 +57,9 @@ function showMovies(data) {
     <div class="movie_info">
       <div class="movie_title">${movie.nameRu}</div>
       <div class="movie_category">${movie.genres.map( (genre) => `${ genre.genre}`)}</div>
+      ${movie.rating && (`
       <div class="movie_average movie_average-${getClassByRate(movie.rating)}">${movie.rating}</div>
+      `)}
     </div>
     `;
       moviesElement.appendChild(movieElement);
