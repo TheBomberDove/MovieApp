@@ -72,7 +72,7 @@ const search = document.querySelector(".header_search");
 form.addEventListener("submit", (e) =>  {
   e.preventDefault();
 
-  const apiSearchUrl = '${apiUrlSearch}${search.value}'
+  const apiSearchUrl = `${apiUrlSearch}${search.value}`
   if (search.value) {
     getMovies(apiSearchUrl)
 
