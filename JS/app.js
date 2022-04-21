@@ -2,6 +2,7 @@
 
 const apiKEY = "4c778d14-cc50-4c76-8705-b0308485b611"; //API-ключ
 const apiURLPop = "https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1"; //URL на который ходим с ключом
+const apiUrlSearch = "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword="
 
 getMovies(apiURLPop);
 
@@ -42,6 +43,8 @@ function getClassByRate(vote) { // в if делаем ранжирование �
 function showMovies(data) {
   const moviesElement = document.querySelector(".movies");
 
+  document.querySelector(".movies").innerHTML = ""; //чистим страничку для поиска, иначе вниз добавляется результат поиска
+
   data.films.forEach(movie => { //динамически создаем карточки фильмов
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
@@ -62,3 +65,17 @@ function showMovies(data) {
   });
 
 }
+
+const form = document.querySelector("form");
+const search = document.querySelector(".header_search");
+
+form.addEventListener("submit", (e) =>  {
+  e.preventDefault();
+
+  const apiSearchUrl = '${apiUrlSearch}${search.value}'
+  if (search.value) {
+    getMovies(apiSearchUrl)
+
+    search.value = "";
+  }
+})
